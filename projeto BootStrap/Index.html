@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portal do Aluno</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="styles/styles.css" />
+  <script src='js/bootstrap.min.js'></script>
+
+  <script>
+    function calcula_media(i) {
+      var n1 = document.getElementById("n1_aluno_" + i).value;
+      var n2 = document.getElementById("n2_aluno_" + i).value;
+      var n3 = document.getElementById("n3_aluno_" + i).value;
+      var n4 = document.getElementById("n4_aluno_" + i).value;
+      var n5 = document.getElementById("n5_aluno_" + i).value;
+      var media = document.getElementById("media_aluno_" + i);
+      var resultado = document.getElementById("resultado_aluno_" + i);
+
+      var calculo = (parseFloat(n1) + parseFloat(n2) + parseFloat(n3) + parseFloat(n4) + parseFloat(n5)) / 5;
+
+      if (calculo >= 5) {
+        media.innerHTML = "<div class='text-success'>" + calculo.toFixed(1) + "</div>";
+        resultado.innerText = "Aprovado";
+      } else {
+        media.innerHTML = "<div class='text-danger'>" + calculo.toFixed(1) + "</div>";
+        resultado.innerText = "Reprovado";
+      }
+    }
+  </script>
+    
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+          <div
+            class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"
+          >
+            <a
+              href="/"
+              class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+            >
+              <div>
+                <img
+                  src="images/senai.svg"
+                  alt="hugenerd"
+                  width="150"
+                  height="150"
+                  class=""
+                />
+              </div>
+              
+              
+            </a>
+            <ul
+              class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+              id="menu"
+            >
+              <li class="nav-item">
+                <a href="#" class="nav-link align-middle px-0">
+                  <i class="fs-4 bi-house"></i>
+                  <span class="ms-1 d-none d-sm-inline">Home</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#submenu1"
+                  data-bs-toggle="collapse"
+                  class="nav-link px-0 align-middle"
+                >
+                  <i class="fs-4 bi-speedometer2"></i>
+                  <span class="ms-1 d-none d-sm-inline">Dashboard</span>
+                </a>
+                <ul
+                  class="collapse show nav flex-column ms-1"
+                  id="submenu1"
+                  data-bs-parent="#menu"
+                >
+                  <li class="w-100">
+                    <a href="#" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Item</span> 1
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Item</span> 2
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" class="nav-link px-0 align-middle">
+                  <i class="fs-4 bi-table"></i>
+                  <span class="ms-1 d-none d-sm-inline">Cadastro</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="#submenu2"
+                  data-bs-toggle="collapse"
+                  class="nav-link px-0 align-middle"
+                >
+                  <i class="fs-4 bi-bootstrap"></i>
+                  <span class="ms-1 d-none d-sm-inline">Professores</span></a
+                >
+                <ul
+                  class="collapse nav flex-column ms-1"
+                  id="submenu2"
+                  data-bs-parent="#menu"
+                >
+                  <li class="w-100">
+                    <a href="#" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Item</span> 1</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Item</span> 2</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#submenu3"
+                  data-bs-toggle="collapse"
+                  class="nav-link px-0 align-middle"
+                >
+                  <i class="fs-4 bi-grid"></i>
+                  <span class="ms-1 d-none d-sm-inline">Alunos</span>
+                </a>
+                <ul
+                  class="collapse nav flex-column ms-1"
+                  id="submenu3"
+                  data-bs-parent="#menu"
+                >
+                  <li class="w-100">
+                    <a href="#" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Product</span> 1</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Product</span> 2</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Product</span> 3</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Product</span> 4</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" class="nav-link px-0 align-middle">
+                  <i class="fs-4 bi-people"></i>
+                  <span class="ms-1 d-none d-sm-inline">Funcionarios</span>
+                </a>
+              </li>
+            </ul>
+            <hr />
+            <div class="dropdown pb-4">
+              <a
+                href="#"
+                class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                id="dropdownUser1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="images/842389795-62378471c5998.webp"
+                  alt="hugenerd"
+                  width="30"
+                  height="30"
+                  class="rounded-circle"
+                />
+                <span class="d-none d-sm-inline mx-1">Neymar Jr.</span>
+              </a>
+              <h6>Administrador</h6>
+              <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                <li><a class="dropdown-item" href="#">New project...</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col py-3"></div>
+        <div class="container-fluid">
+          <div class="row flex-nowrap">
+      
+            <div class="container">
+              <h1>Nota dos alunos</h1>
+              
+              <table class="table table-hover " style="border-color: #000000;">
+                <thead>
+                  <tr >
+                    <th >Estudante</th>
+                    <th>Nota1</th>
+                    <th>Nota2</th>
+                    <th>Nota3</th>
+                    <th>Nota4</th>
+                    <th>Nota5</th>
+                    <th>Média</th>
+                    <th>Resultado Final</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Ana da Silva</td>
+                    <td><input type="number" value="0" min="0.0" step="0.1" max="10.0" name="n1" id="n1_aluno_0" onchange="calcula_media(0)"></td>
+                    <td><input type="number" value="0" min="0.0" step="0.1" max="10.0" name="n2" id="n2_aluno_0" onchange="calcula_media(0)"></td>
+                    <td><input type="number" value="0" min="0.0" step="0.1" max="10.0" name="n3" id="n3_aluno_0" onchange="calcula_media(0)"></td>
+                    <td><input type="number" value="0" min="0.0" step="0.1" max="10.0" name="n4" id="n4_aluno_0" onchange="calcula_media(0)"></td>
+                    <td><input type="number" value="0" min="0.0" step="0.1" max="10.0" name="n5" id="n5_aluno_0" onchange="calcula_media(0)"></td>
+                    <td><div id="media_aluno_0" class="media">0,0</div></td>
+                    <td><div id="resultado_aluno_0" class="resultado"> </div></td>
+                  </tr>
+
+                  <tr>
+                    <td>Marcelo</td>
+                    <td><input type="number" value="0" min="0.0" step="0.1" max="10.0" name="n1" id="n1_aluno_1" onchange="calcula_media(1)"></td>
+                    <td><input type="number" value="0" min="0.0" step="0.1" max="10.0" name="n2" id="n2_aluno_1" onchange="calcula_media(1)"></td>
+                    <td><input type="number" value="0" min="0.0" step="0.1" max="10.0" name="n3" id="n3_aluno_1" onchange="calcula_media(1)"></td>
+                    <td><input type="number" value="0" min="0.0" step="0.1" max="10.0" name="n4" id="n4_aluno_1" onchange="calcula_media(1)"></td>
+                    <td><input type="number" value="0" min="0.0" step="0.1" max="10.0" name="n5" id="n5_aluno_1" onchange="calcula_media(1)"></td>
+                    <td><div id="media_aluno_1" class="media">0,0</div></td>
+                    <td><div id="resultado_aluno_1" class="resultado"> </div></td>
+                  </tr>
+
+                  <tr>
+                    <td>João</td>
+                    <td><input type="number" value="0" min="0.0" step="0.1" max="10.0" name="n1" id="n1_aluno_2" onchange="calcula_media(2)"></td>
+                    <td><input type="number" value="0" min="0.0" step="0.1" max="10.0" name="n2" id="n2_aluno_2" onchange="calcula_media(2)"></td>
+                    <td><input type="number" value="0" min="0.0" step="0.1" max="10.0" name="n3" id="n3_aluno_2" onchange="calcula_media(2)"></td>
+                    <td><input type="number" value="0" min="0.0" step="0.1" max="10.0" name="n4" id="n4_aluno_2" onchange="calcula_media(2)"></td>
+                    <td><input type="number" value="0" min="0.0" step="0.1" max="10.0" name="n5" id="n5_aluno_2" onchange="calcula_media(2)"></td>
+                    <td><div id="media_aluno_2" class="media">0,0</div></td>
+                    <td><div id="resultado_aluno_2" class="resultado"> </div></td>
+                  </tr>
+
+                  <tr>
+                    <td>Weverton</td>
+                    <td><input type="number" value="0" min="0.0" step="0.1" max="10.0" name="n1" id="n1_aluno_3" onchange="calcula_media(3)"></td>
+                    <td><input type="number" value="0" min="0.0" step="0.1" max="10.0" name="n2" id="n2_aluno_3" onchange="calcula_media(3)"></td>
+                    <td><input type="number" value="0" min="0.0" step="0.1" max="10.0" name="n3" id="n3_aluno_3" onchange="calcula_media(3)"></td>
+                    <td><input type="number" value="0" min="0.0" step="0.1" max="10.0" name="n4" id="n4_aluno_3" onchange="calcula_media(3)"></td>
+                    <td><input type="number" value="0" min="0.0" step="0.1" max="10.0" name="n5" id="n5_aluno_3" onchange="calcula_media(3)"></td>
+                    <td><div id="media_aluno_3" class="media">0,0</div></td>
+                    <td><div id="resultado_aluno_3" class="resultado"> </div></td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      
+    
+
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
